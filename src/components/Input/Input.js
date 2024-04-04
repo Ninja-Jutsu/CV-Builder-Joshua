@@ -1,32 +1,46 @@
 import React, { useState } from 'react';
 
-function Input({ type, id, label, refPara, ...delegated }) {
+function Input({
+  type = 'text',
+  id,
+  label,
+  refPara,
+  ...delegated
+}) {
   const [value, setValue] = useState('');
   const [isSubmit, setIsSubmit] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
     // alter the referenced paragraph on Submit
-    refPara.current.innerText = value;
+    refPara.innerText = value;
     setIsSubmit(true);
   }
 
   return !isSubmit ? (
     <form>
-      <label htmlFor='id'>
+      <label htmlFor={id}>
         {label}
         <input
+          {...delegated}
           id={id}
           type={type}
           value={value}
           onChange={(e) => {
             setValue(e.target.value);
+            console.log(refPara)
             // alter the referenced paragraph on Change
-            refPara.current.innerText = e.target.value;
+            refPara.innerText = e.target.value;
           }}
-        ></input>
+        />
       </label>
-      <button onClick={handleSubmit}>Confirm</button>
+      <button
+        type='submit'
+        // Check if the input is not empty?
+        onClick={handleSubmit}
+      >
+        Confirm
+      </button>
     </form>
   ) : (
     <div className='submitted'>
