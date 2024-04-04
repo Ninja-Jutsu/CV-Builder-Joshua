@@ -38,11 +38,13 @@ header {
 main {
   grid-row: 2/8;
   grid-column: 2/3;
+  border: 1px solid black;
 }
 
 aside {
   grid-row: 2/8;
   grid-column: 1/2;
+  border: 1px solid black;
 }
 img {
   width: 5%;
