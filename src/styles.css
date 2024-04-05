@@ -23,11 +23,9 @@ html {
 #root {
   display: grid;
   grid-template-rows: 10% repeat(6, 1fr) 10%;
-  grid-template-columns: 1fr 2fr;
 }
 header {
   grid-row: 1/2;
-  grid-column: 1/3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,17 +35,11 @@ header {
 
 main {
   grid-row: 2/8;
-  grid-column: 2/3;
   border: 1px solid black;
 }
 
-aside {
-  grid-row: 2/8;
-  grid-column: 1/2;
-  border: 1px solid black;
-}
 img {
-  width: 5%;
+  width: 50px;
 }
 
 .edit-button {
@@ -57,4 +49,63 @@ img {
 
 .input-result {
   display: flex;
+}
+
+.section-wrapper {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+  margin: 10px;
+}
+
+.subsection-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid black;
+  margin: 10px;
+  padding: 10px;
+}
+
+.form-wrapper {
+  border: 1px solid yellow;
+  width: 40%;
+  min-width: 300px;
+  max-width: 400px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-wrapper button {
+  cursor: pointer;
+  width: max-content;
+  align-self: center;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  text-align: center;
+  background-color: rgb(134, 197, 219);
+}
+
+.language-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+span,
+label {
+  cursor: pointer;
+}
+
+span,
+label:hover {
+  color: lightslategray;
+}
+
+span,
+label:active {
+  scale: 0.9;
 }
